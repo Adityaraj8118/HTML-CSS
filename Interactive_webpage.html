@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        form {
+            margin: 20px auto;
+            width: 300px;
+            text-align: left;
+        }
+        form label {
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Interactive Web Page</h1>
+    </header>
+    <main>
+        <p>This page has some fun and interactive elements!</p>
+
+        <!-- Interactive Button -->
+        <button onclick="showAlert()">Click Me!</button>
+
+        <p id="message" style="font-weight: bold; color: #555;"></p>
+
+        <!-- Contact Form -->
+        <h2>Contact Me</h2>
+        <form id="contactForm" onsubmit="return submitForm();">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="messageInput" name="message" rows="4" placeholder="Enter your message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <footer>
+        <p>© 2025 My Interactive Web Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to display alert    
+        function showAlert() {
+            document.getElementById('message').textContent = "Thanks for clicking the button!";
+            alert("Hello! You just clicked the button.");
+        }
+
+        // Function to handle form submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('messageInput').value;
+
+            alert(`Thank you, ${name}! Your message has been submitted.\nWe will get back to you at ${email}.`);
+            return false; // Prevent form from refreshing the page
+        }
+    </script>
+</body>
+</html>
